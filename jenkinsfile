@@ -1,6 +1,15 @@
 pipeline {
     agent any
     stages {
+        stage('git clone') {
+            steps {
+                git 'https://github.com/mallikarjunkasukurthi/javajenkinsmaven.git'
+            }
+        }
+        
+        
+        
+        
         stage('Build') {
             steps {
                 echo "Build"
@@ -27,7 +36,7 @@ pipeline {
         always {
             echo 'Im awesome. I run always'
         }
-        Success {
+        success {
             echo 'I run when you are successful'
         }
         failure {
